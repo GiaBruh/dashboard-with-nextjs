@@ -1,9 +1,8 @@
 import React, { Suspense } from "react";
 import { lusitana } from "../../ui/fonts";
-import { fetchLatestInvoices, fetchCardData } from "../../lib/data";
 import RevenueChart from "../../ui/dashboard/revenue-chart";
 import LatestInvoices from "../../ui/dashboard/latest-invoices";
-import CardWrapper, { Card } from "../../ui/dashboard/cards";
+import CardWrapper from "../../ui/dashboard/cards";
 import {
   CardSkeleton,
   LatestInvoicesSkeleton,
@@ -11,14 +10,6 @@ import {
 } from "@/app/ui/skeletons";
 
 const page = async () => {
-  const latestInvoices = await fetchLatestInvoices();
-  const {
-    numberOfInvoices,
-    totalPendingInvoices,
-    totalPaidInvoices,
-    numberOfCustomers,
-  } = await fetchCardData();
-
   return (
     <main>
       <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
