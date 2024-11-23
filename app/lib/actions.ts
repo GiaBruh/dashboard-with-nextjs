@@ -9,9 +9,9 @@ import { AuthError } from "next-auth";
 
 export type State = {
   errors?: {
-    customerId?: string;
-    amount?: number;
-    status?: string;
+    customerId?: string[];
+    amount?: string[];
+    status?: string[];
   };
   message?: string | null;
 };
